@@ -1,0 +1,103 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 50px;
+  background: linear-gradient(45deg, #f37646, #f3e946) center center no-repeat;
+  line-height: 1.4;
+}
+
+.item {
+  margin: 40px 10px;
+  background-color: #fff;
+  box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  transition: transform 0.3s;
+  transform: translate3d(0, -1px, 0);
+
+  &:hover {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__body {
+    padding: 25px;
+  }
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #232323;
+  }
+  &__description {
+    color: #585858;
+  }
+}
+
+.items {
+  position: relative;
+}
+
+/**
+Carrousel
+*/
+
+.carrousel {
+  position: relative;
+  // overflow: hidden;
+  &__container {
+    transition: transform 0.3s;
+    transform: translate3d(0, 0, 0);
+  }
+  &__container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  &__item {
+    float: left;
+  }
+
+  &__next,
+  &__prev {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #fff url("img/fleche.png") center center no-repeat;
+    background-size: 20px 20px;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -20px;
+    right: -20px;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+    &:hover {
+      transform: scale(1.2);
+    }
+    &--hiden {
+      opacity: 0;
+      cursor: none;
+    }
+  }
+  &__prev {
+    right: auto;
+    left: -20px;
+    transform: rotate(180deg);
+    &:hover {
+      transform: scale(1.2);
+      transform: rotate(180deg);
+    }
+  }
+}

@@ -1,0 +1,127 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 50px;
+  background: linear-gradient(45deg, #f37646, #f3e946) center center no-repeat;
+  line-height: 1.4;
+}
+
+.item {
+  margin: 40px 10px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+          box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translate3d(0, -1px, 0);
+          transform: translate3d(0, -1px, 0);
+}
+
+.item:hover {
+  -webkit-transform: translate3d(0, -10px, 0);
+          transform: translate3d(0, -10px, 0);
+}
+
+.item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.item__body {
+  padding: 25px;
+}
+
+.item__title {
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #232323;
+}
+
+.item__description {
+  color: #585858;
+}
+
+.items {
+  position: relative;
+}
+
+/**
+Carrousel
+*/
+.carrousel {
+  position: relative;
+}
+
+.carrousel__container {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.carrousel__container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.carrousel__item {
+  float: left;
+}
+
+.carrousel__next, .carrousel__prev {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #fff url("img/fleche.png") center center no-repeat;
+  background-size: 20px 20px;
+  border-radius: 50%;
+  top: 50%;
+  margin-top: -20px;
+  right: -20px;
+  -webkit-box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+          box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+}
+
+.carrousel__next:hover, .carrousel__prev:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.carrousel__next--hiden, .carrousel__prev--hiden {
+  opacity: 0;
+  cursor: none;
+}
+
+.carrousel__prev {
+  right: auto;
+  left: -20px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.carrousel__prev:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+/*# sourceMappingURL=style.css.map */
